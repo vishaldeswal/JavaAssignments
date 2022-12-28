@@ -1,0 +1,40 @@
+h3 {
+    padding-top: 1%;
+    text-align: center;
+}
+
+.container {
+    color: rgb(0, 2, 5);
+    text-align: justify;
+}
+
+.form-group {
+    padding: 3%;
+}
+
+form {
+    font-size: 18px;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 4.5%;
+    padding-bottom: 10%;
+}
+
+.form-control {
+    padding: 1%;
+    margin: 1%;
+}
+
+button {
+   
+    margin: 3%;
+    margin-left: 100px;
+}
+
+button:hover{
+    background-color: #f10de2
+}
+
+.marginResult{
+    margin: 3%;
+}

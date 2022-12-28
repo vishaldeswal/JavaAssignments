@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="card" style="padding:20px">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email Id</mat-label>
+                <input type="text" #userName="ngModel" matInput ngModel mail name="userName" id="userName" placeholder="Enter your username." required>
+                <span *ngIf="!userName.valid && userName.touched " style="color: red;">Please enter the valid
+                    email</span>
+               
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input  type="password" #userPassword="ngModel" matInput ngModel name="userPassword" id="userPassword" placeholder="Enter your password." required minlength="8">
+                <span *ngIf="!userPassword.valid && userPassword.touched " style="color: red;">Please enter the valid
+                    contact number</span>
+
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary" class="w-100" [disabled]="loginForm.invalid">Login</button>
+            
+        </form>
+        
+        
+
+    </div>
+    <div class="text-center">
+        <button type="button" mat-raised-button  (click)="registerUser()">Create an account as user</button>
+        <button type="button" mat-raised-button  (click)="registerVendor()">Create an account as Vendor</button>
+    </div>
+    
+</div>

@@ -1,0 +1,19 @@
+
+button {
+    background-color:#0686d6;
+    padding: 0.8em;
+    margin: 5%;
+    color:white; 
+}
+
+button:hover{
+    background-color: #f10de2;
+    
+}
+.container-fluid {
+    padding-bottom: 9%;
+    padding-top: 10%;
+    font-size: 120%;
+    text-align: center;
+    color: rgb(0, 1, 1);
+}

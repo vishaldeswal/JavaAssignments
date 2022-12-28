@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="training">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.5" />
+	<property name="source" value="1.5" />
+	<path id="Maven Dependencies.libraryclasspath">
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/com/opencsv/opencsv/5.5.2/opencsv-5.5.2.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar" />
+		<pathelement location="C:/Users/vishaldeswal/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar" />
+	</path>
+	<path id="training.classpath">
+		<pathelement location="target/classes" />
+		<pathelement location="target/test-classes" />
+		<path refid="Maven Dependencies.libraryclasspath" />
+	</path>
+	<path id="run.App (1).classpath">
+		<path refid="training.classpath" />
+		<path refid="Maven Dependencies.libraryclasspath" />
+	</path>
+	<target name="init">
+		<mkdir dir="target/classes" />
+		<mkdir dir="target/test-classes" />
+		<copy includeemptydirs="false" todir="target/classes">
+			<fileset dir="src/main/java">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="target/test-classes">
+			<fileset dir="src/test/java">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="createjar">
+			<jar destfile="${D:/vishal-deswal/advanceJava/assignment1/training/file.jar" basedir="D:/vishal-deswal/advanceJava/assignment1/training/bin" />
+		</target>
+
+	<target name="clean">
+		<delete dir="target/classes" />
+		<delete dir="target/test-classes" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src/main/java" />
+			<classpath refid="training.classpath" />
+		</javac>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src/test/java" />
+			<classpath refid="training.classpath" />
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
+	<target name="App (1)">
+		<java classname="com.nagarro.advancejava.assignment1.training.App" failonerror="true" fork="yes">
+			<classpath refid="run.App (1).classpath" />
+		</java>
+	</target>
+</project>

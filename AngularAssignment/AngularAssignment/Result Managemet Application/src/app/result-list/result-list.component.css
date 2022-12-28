@@ -1,0 +1,70 @@
+h5 {
+    padding-left: 5%;
+    padding-top: 2%;
+    color: rgb(0, 1, 1);
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 0.5%;
+}
+
+table,
+tr,
+th,
+td {
+    border: 1px solid rgb(5, 0, 0);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-collapse: collapse;
+}
+
+.container {
+    margin-top: 1%;
+    overflow-y: scroll;
+    height: 52vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input {
+    margin: 2%;
+}
+
+button {
+    padding: 0.8em;
+    margin-top: 1%;
+    color: white;
+     text-align: center;
+}
+
+
+.totalstudents {
+    text-align: left;
+}
+
+.addrecord{
+    font-size: 20px;
+    margin:2% 5%;
+    float: right;
+}
+.logout {
+    font-size: 2px;
+    margin:2% 5%;
+    float: right;
+}
+
+#addbtn {
+    margin-top: 0%;
+    margin-left: 60%;
+}
+
+button:hover{
+    background-color: #f10de2;
+    
+} 

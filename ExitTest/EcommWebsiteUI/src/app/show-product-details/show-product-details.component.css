@@ -1,0 +1,17 @@
+table{
+    width:100%;
+}
+
+table td{
+    padding: 10px;
+}
+
+.mat-column-Description{
+    width:35% !important;
+}
+
+.make-red{
+    
+    background-color: rgba(253, 38, 9, 0.473);
+    
+}

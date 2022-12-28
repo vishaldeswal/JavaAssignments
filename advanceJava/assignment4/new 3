@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+    
+    
+    stages{
+        stage('version'){
+            steps{
+                bat 'mvn -v'
+                }
+            
+        }
+        stage('checkout'){
+            steps{
+                git branch: 'master', credentialsId: 'e1a84d37-63dd-4333-82d8-cea4e67aa85d', url: 'https://git.nagarro.com/GITG00641/Java/vishal-deswal.git'
+                
+            }
+        
+        }
+        stage('clean'){
+            steps{
+                bat 'mvn clean -f advanceJava/assignment5/LibraryManagementClient/pom.xml'
+                
+            }
+            
+        }
+        stage('build'){
+            steps{
+                bat 'mvn install -f advanceJava/assignment5/LibraryManagementClient/pom.xml'
+                    
+                }
+            
+        }
+
+    }
+}

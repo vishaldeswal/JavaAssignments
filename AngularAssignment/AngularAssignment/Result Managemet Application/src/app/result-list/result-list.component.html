@@ -1,0 +1,41 @@
+<div class="background">
+  <div class="logout">
+        <a routerLink="/"><button class="btn btn-danger pull-right" >Logout</button></a>
+  </div>
+    <div class="totalstudents">
+        <h5><b>Total {{result.length}} students</b></h5>
+      </div>
+      <div class="addrecord">
+            <button class="btn btn-primary btn1" (click)="goToPage('AddResult')"><b>Add Record</b></button>
+      </div>
+   
+    <div class="container">
+        <table id="result">
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col}}
+                </th>
+                <th>Actions</th>
+            </tr>
+
+            <tr *ngFor="let result of result">
+                <td>
+                    {{result.id}}
+                </td>
+                <td>
+                    {{result.name}}
+                </td>
+                <td>
+                    {{result.dob}}
+                </td>
+                <td>
+                    {{result.score}}
+                </td>
+                <td>
+                    <a href="javascript: void(0);"><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png" (click)="onUpdate(result.id)"/></a>
+                    <a href="javascript: void(0);"><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" (click)="onDelete(result.id)"/></a>
+                  </td>
+            </tr>
+        </table>
+    </div>
+</div>

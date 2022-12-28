@@ -1,0 +1,78 @@
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col-6" style="padding: 20px">
+            <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)" name="orderForm" novalidate>
+
+                <mat-form-field appearence="outline" class="w-100">
+                    <mat-label>Full name</mat-label>
+                    <input type="text" #fullName="ngModel" matInput placeholder=" Enter Full name"
+                        [(ngModel)]="orderDetails.fullName" name="fullName" minlength="4" required>
+                    <span *ngIf="!fullName.valid && fullName.touched " style="color: red;">Please enter the valid
+                        name</span>
+                </mat-form-field>
+
+
+                <mat-form-field appearence="outline" class="w-100">
+                    <mat-label>Full Address</mat-label>
+                    <input type="text" #fullAddress="ngModel" matInput placeholder=" Enter Full Address"
+                        [(ngModel)]="orderDetails.fullAddress" name="fullAddress" required>
+                        <span *ngIf="!fullAddress.valid && fullAddress.touched " style="color: red;">Please enter the valid
+                            address</span>
+                </mat-form-field>
+
+
+                <mat-form-field appearence="outline" class="w-100">
+                    <mat-label>Contact Number</mat-label>
+                    <input type="number" #contactNumber="ngModel" matInput placeholder=" Enter Contact Number"
+                        [(ngModel)]="orderDetails.contactNumber"  name="contactNumber" maxlength="10" minlength="10"
+                        required>
+                        <span *ngIf="!contactNumber.valid && contactNumber.touched " style="color: red;">Please enter the valid
+                            contact number</span>
+                </mat-form-field>
+
+                <mat-form-field appearence="outline" class="w-100">
+                    <mat-label>Alternate Contact Number</mat-label>
+                    <input type="number" matInput placeholder=" Enter Alternate Contact Number"
+                        [(ngModel)]="orderDetails.alternateContactNumber" name="alternateContactNumber">
+                </mat-form-field>
+
+                <div>
+                    <button type="submit" mat-stroked-button color="primary" align="right"
+                        [disabled]="orderForm.invalid">Place Order</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <table class="table">
+                <thead class="thead">
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr *ngFor="let product of productDetails">
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productDicountedPrice}}</td>
+                        <td>
+                            <select #quantity class="form-select" [ngModel]="getQuantityForProduct(product.productId)"
+                                (change)="onQuantityChanged(quantity.value, product.productId)">
+                                <option *ngFor="let quantity of quantityBuyOption" value="{{quantity}}">{{quantity}}</option>
+                               
+                            </select>
+                        </td>
+
+                        <td>
+                            {{getCalculatedTotal(product.productId, product.productDicountedPrice)}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>

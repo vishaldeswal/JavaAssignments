@@ -1,0 +1,25 @@
+.marginResult{
+    margin: 1%;
+}
+
+fieldset{
+    margin-bottom: 2%;
+}
+
+.msg {
+    color: red;
+    margin-bottom: 5%;
+}
+
+.btn{
+    margin-left: 100px;
+}
+
+button:hover{
+    background-color: #f10de2;
+    
+}
+
+.logout {
+    text-align: right;
+}

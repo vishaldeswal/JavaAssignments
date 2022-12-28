@@ -1,0 +1,20 @@
+{
+  "Teacher": [
+    {
+      "user": "admin",
+      "pass": "admin"
+    },
+    {
+      "user": "teacher",
+      "pass": "teacher"
+    }
+  ],
+  "Result": [
+    {
+      "id": 1,
+      "name": "Vishal",
+      "dob": "2022-12-12",
+      "score": 234
+    }
+  ]
+}

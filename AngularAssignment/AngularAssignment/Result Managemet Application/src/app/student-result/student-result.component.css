@@ -1,0 +1,20 @@
+.marginResult{
+    margin: 3%;
+}
+
+fieldset{
+    margin-bottom: 2%;
+}
+
+.logout {
+    text-align: right;
+}
+
+.btn{
+    margin-left: 100px;
+}
+
+button:hover{
+    background-color: #f10de2;
+}
+    
